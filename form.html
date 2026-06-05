@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Pemesanan Apk Premium</title>
+
+    <meta name="description" content="Pemesanan Apk Premium cepat, aman, dan terpercaya.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+    <main class="form-page">
+
+        <div class="container">
+
+            <!-- ========================================= -->
+            <!-- APP BANNER -->
+            <!-- ========================================= -->
+            <section class="app-banner">
+
+                <div class="app-banner-image">
+                    <img
+                        id="appBannerImage"
+                        src="assets/edit.png"
+                        alt="Aplikasi Premium"
+                    >
+                </div>
+
+                <div class="app-banner-content">
+
+                    <span class="safe-badge">
+                        Pembayaran Aman
+                    </span>
+
+                    <h1 id="appName" class="app-name">
+                        Apk Premium
+                    </h1>
+
+                    <p class="app-description">
+                        Aktivasi cepat, aman, dan terpercaya.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- STEP 1 : PILIH DURASI & NOMINAL -->
+            <!-- ========================================= -->
+            <section class="order-section">
+
+                <div class="section-header">
+                    <span class="step-badge">Step 1</span>
+                    <h2>Pilih Durasi & Nominal</h2>
+                </div>
+
+                <div id="packageContainer" class="package-list">
+
+                    <!-- ========================= -->
+                    <!-- ALIGHT MOTION PACKAGES -->
+                    <!-- Hanya tampil jika memilih Alight Motion -->
+                    <!-- ========================= -->
+
+                    <div
+                        id="alightMotionPackages"
+                        class="package-group"
+                    >
+
+                        <article
+                            class="package-card"
+                            data-app="Alight Motion"
+                            data-package="Alight Motion 1 Tahun Email Seller"
+                            data-price="5000"
+                        >
+                            <h3>Alight Motion 1 Tahun Email Seller</h3>
+                            <p>Durasi 1 Tahun</p>
+                            <strong>Rp5.000</strong>
+                        </article>
+
+                        <article
+                            class="package-card"
+                            data-app="Alight Motion"
+                            data-package="Alight Motion 1 Tahun Email Customer"
+                            data-price="8000"
+                        >
+                            <h3>Alight Motion 1 Tahun Email Customer</h3>
+                            <p>Durasi 1 Tahun</p>
+                            <strong>Rp8.000</strong>
+                        </article>
+
+                    </div>
+
+                    <!-- ========================= -->
+                    <!-- WINK PACKAGES -->
+                    <!-- Hanya tampil jika memilih WINK -->
+                    <!-- ========================= -->
+
+                    <div
+                        id="winkPackages"
+                        class="package-group"
+                    >
+
+                        <article
+                            class="package-card"
+                            data-app="WINK"
+                            data-package="WINK Premium 1 Bulan"
+                            data-price="10000"
+                        >
+                            <h3>WINK Premium 1 Bulan</h3>
+                            <p>Durasi 1 Bulan</p>
+                            <strong>Rp10.000</strong>
+                        </article>
+
+                        <article
+                            class="package-card"
+                            data-app="WINK"
+                            data-package="WINK Premium 7 Hari"
+                            data-price="8000"
+                        >
+                            <h3>WINK Premium 7 Hari</h3>
+                            <p>Durasi 7 Hari</p>
+                            <strong>Rp8.000</strong>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- STEP 2 : METODE PEMBAYARAN -->
+            <!-- ========================================= -->
+            <section class="payment-section">
+
+                <div class="section-header">
+                    <span class="step-badge">Step 2</span>
+                    <h2>Metode Pembayaran</h2>
+                </div>
+
+                <div class="payment-list">
+
+                    <article
+                        class="payment-card active"
+                        data-payment="QRIS"
+                    >
+                        <div class="payment-content">
+                            <h3>QRIS</h3>
+                            <p>Pembayaran Cepat & Aman</p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- STEP 3 : JUMLAH PEMBELIAN -->
+            <!-- ========================================= -->
+            <section class="quantity-section">
+
+                <div class="section-header">
+                    <span class="step-badge">Step 3</span>
+                    <h2>Jumlah Pembelian</h2>
+                </div>
+
+                <div class="quantity-card">
+
+                    <label for="quantityInput">
+                        Masukkan Jumlah Pembelian
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantityInput"
+                        class="quantity-input"
+                        min="1"
+                        value="1"
+                        placeholder="Masukkan jumlah pembelian"
+                    >
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- RINGKASAN PESANAN -->
+            <!-- ========================================= -->
+            <section class="summary-section">
+
+                <div class="section-header">
+                    <h2>Ringkasan Pesanan</h2>
+                </div>
+
+                <div class="summary-card">
+
+                    <div class="summary-item">
+                        <span>Aplikasi</span>
+                        <strong id="summaryApp">
+                            -
+                        </strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Paket</span>
+                        <strong id="summaryPackage">
+                            -
+                        </strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Jumlah</span>
+                        <strong id="summaryQuantity">
+                            1
+                        </strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Metode Pembayaran</span>
+                        <strong>
+                            QRIS
+                        </strong>
+                    </div>
+
+                    <div class="summary-item total">
+                        <span>Total Pembayaran</span>
+                        <strong id="summaryPrice">
+                            Rp0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- BELI SEKARANG -->
+            <!-- ========================================= -->
+            <section class="action-section">
+
+                <a
+                    id="buyButton"
+                    href="https://wa.me/6285828936369"
+                    class="buy-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Beli Sekarang
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- ========================================= -->
+    <!-- TOAST CONTAINER -->
+    <!-- ========================================= -->
+    <div
+        id="toastContainer"
+        class="toast-container"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <script src="form.js"></script>
+
+</body>
+</html>

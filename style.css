@@ -1,0 +1,431 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.12), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.12), transparent 30%),
+        linear-gradient(
+            135deg,
+            #050505 0%,
+            #101010 30%,
+            #1a1a1a 55%,
+            #0f0f0f 75%,
+            #000000 100%
+        );
+    color: #ffffff;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* =========================================================
+   LOADING SCREEN
+========================================================= */
+
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(139, 92, 246, 0.15),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #000000,
+            #101010,
+            #1a1a1a,
+            #000000
+        );
+
+    backdrop-filter: blur(25px);
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    color: #ffffff;
+
+    animation: logoGlow 2s infinite ease-in-out;
+}
+
+@keyframes logoGlow {
+    0% {
+        opacity: 0.7;
+        transform: scale(1);
+        text-shadow:
+            0 0 10px rgba(59, 130, 246, 0.5),
+            0 0 20px rgba(59, 130, 246, 0.4);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+        text-shadow:
+            0 0 20px rgba(139, 92, 246, 0.8),
+            0 0 40px rgba(139, 92, 246, 0.7),
+            0 0 60px rgba(59, 130, 246, 0.6);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: scale(1);
+        text-shadow:
+            0 0 10px rgba(59, 130, 246, 0.5),
+            0 0 20px rgba(59, 130, 246, 0.4);
+    }
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.header-content {
+    text-align: center;
+
+    padding: 28px;
+
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.site-title {
+    font-size: 2rem;
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #d4d4d4
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.site-subtitle {
+    margin-top: 8px;
+
+    font-size: 0.95rem;
+    font-weight: 400;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main-content {
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    margin-bottom: 24px;
+
+    color: #ffffff;
+}
+
+/* =========================================================
+   APK GRID
+========================================================= */
+
+.apk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* =========================================================
+   APK CARD
+========================================================= */
+
+.apk-card {
+    position: relative;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+
+    backdrop-filter: blur(24px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.apk-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.08),
+            rgba(139, 92, 246, 0.08)
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.apk-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(139, 92, 246, 0.4);
+
+    box-shadow:
+        0 0 20px rgba(59, 130, 246, 0.35),
+        0 0 40px rgba(139, 92, 246, 0.25),
+        0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.apk-card:hover::before {
+    opacity: 1;
+}
+
+.apk-card:active {
+    transform: scale(0.97);
+
+    box-shadow:
+        0 0 20px rgba(59, 130, 246, 0.5),
+        0 0 40px rgba(139, 92, 246, 0.4);
+}
+
+.apk-image-wrapper {
+    padding: 16px;
+}
+
+.apk-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+.apk-content {
+    padding: 0 18px 20px;
+}
+
+.apk-title {
+    font-size: 1rem;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+/* =========================================================
+   GLASS LIGHT EFFECT
+========================================================= */
+
+.apk-card::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent
+        );
+
+    transition: 0.8s;
+}
+
+.apk-card:hover::after {
+    left: 140%;
+}
+
+/* =========================================================
+   TOAST CONTAINER
+========================================================= */
+
+.toast-container {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    pointer-events: none;
+}
+
+.toast {
+    min-width: 260px;
+
+    padding: 16px 18px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 20px rgba(59, 130, 246, 0.2),
+        0 0 40px rgba(139, 92, 246, 0.15);
+
+    animation: toastSlide 0.3s ease;
+}
+
+@keyframes toastSlide {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (min-width: 768px) {
+
+    .header {
+        padding-top: 60px;
+    }
+
+    .site-title {
+        font-size: 3rem;
+    }
+
+    .site-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .apk-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE DESKTOP
+========================================================= */
+
+@media (min-width: 1024px) {
+
+    .apk-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .apk-title {
+        font-size: 1.05rem;
+    }
+}
