@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productData = {
 
         "Alight Motion": {
-            image: "assets/edit.png",
+            image: "edit.png",
             products: [
                 {
                     name: "Alight Motion 1 Tahun Email Seller",
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         "WINK": {
-            image: "assets/wink.png",
+            image: "wink.png",
             products: [
                 {
                     name: "WINK Premium 1 Bulan",
